@@ -9,7 +9,7 @@ El objetivo principal es crear una solución tecnológica real para una peluquer
 - Una **página web funcional**  
 - Un **sistema de reservas online**  
 - Una **base de datos integrada**  
-- Una **infraestructura de red documentada**
+- Documentación técnica del proyecto
 
 ---
 
@@ -20,8 +20,7 @@ El proyecto combina:
 
 - Desarrollo web (HTML, CSS, JavaScript)  
 - Backend con **Cloudflare Pages Functions**  
-- Base de datos SQL con **Cloudflare D1**  
-- Simulación y documentación de red local con **Cisco Packet Tracer**
+- Base de datos SQL con **Cloudflare D1**
 
 El resultado es un sistema real de reservas online que almacena los datos en una base de datos en la nube y permite al negocio gestionar citas de forma moderna y eficiente.
 
@@ -33,8 +32,7 @@ El resultado es un sistema real de reservas online que almacena los datos en una
 - Implementar un sistema de reservas online.  
 - Integrar una base de datos SQL para almacenar citas.  
 - Configurar un backend mediante Cloudflare Pages Functions.  
-- Documentar la red local del negocio.  
-- Simular la infraestructura en Cisco Packet Tracer.  
+- Documentar el proceso de desarrollo y despliegue.  
 - Realizar pruebas reales de funcionamiento.
 
 ---
@@ -55,7 +53,6 @@ El resultado es un sistema real de reservas online que almacena los datos en una
 
 ### **Herramientas adicionales**
 - Visual Studio Code  
-- Cisco Packet Tracer  
 - GitHub para control de versiones  
 
 ---
