@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Xabi"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Login - Kokó Salón</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../imagenes/logo.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h1>Kokó Salón</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="html/panel.html">Panle de Citas </a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-container">
+            <h2>Panel de administración</h2>
+
+            <form id="loginForm">
+                <input type="text" id="user" placeholder="Usuario" required>
+                <input type="password" id="pass" placeholder="Contraseña" required>
+                <button type="submit">Entrar</button>
+            </form>
+
+            <p id="msg"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kokó Salón - Tu salón de belleza</p>
+        <p>Contacto: info@kokosalon.com | Tel: 123-456-789</p>
+    </footer>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const user = document.getElementById("user").value;
+            const pass = document.getElementById("pass").value;
+
+            const res = await fetch("/admin/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ user, pass })
+            });
+
+            const text = await res.text();
+            document.getElementById("msg").textContent = text;
+
+            if (res.status === 200) {
+                window.location.href = "panel.html";
+            }
+        });
+    </script>
+
+</body>
+</html>

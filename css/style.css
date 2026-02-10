@@ -1,4 +1,6 @@
-/* ----index.html/general---- */
+/* =========================================================
+   ESTILOS GENERALES DE TODA LA WEB
+   ========================================================= */
 html, body {
     height: 100%;
     margin: 0;
@@ -11,6 +13,10 @@ body {
     background-color: #fff;
     color: #333;
 }
+
+/* =========================================================
+   HEADER Y NAVEGACIÓN
+   ========================================================= */
 header {
     background-color: #f5ebe0;
     padding: 1rem 2rem; 
@@ -40,6 +46,10 @@ nav ul li a:hover {
     background-color: #918a8c;
     color: #fff;
 }
+
+/* =========================================================
+   INICIO / INDEX
+   ========================================================= */
 .contacto {
     text-align: center;
     padding: 2rem 1rem;
@@ -80,7 +90,9 @@ nav ul li a:hover {
     background-color: #553e31;
 }
 
-/* ----Servicios.html---- */
+/* =========================================================
+   SERVICIOS
+   ========================================================= */
 .servicios {
     padding: 2rem;
     text-align: center;
@@ -116,7 +128,9 @@ footer {
     border-radius: 5px;
 }
 
-/* ----galeria.html---- */
+/* =========================================================
+   GALERÍA
+   ========================================================= */
 .galeria {
     padding: 2rem;
     text-align: center;
@@ -137,7 +151,9 @@ footer {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* ----sobre.html---- */
+/* =========================================================
+   SOBRE NOSOTROS
+   ========================================================= */
 .sobre {
     padding: 2rem;
     text-align: center;
@@ -170,7 +186,9 @@ footer {
     margin-bottom: 0.5rem;
 }
 
-/* ----contacto.html---- */
+/* =========================================================
+   CONTACTO
+   ========================================================= */
 .error { color: red; font-weight: bold; }
 .exito { color: green; font-weight: bold; }
 form {
@@ -200,7 +218,104 @@ form button {
 }
 form button:hover { background-color: #553e31; }
 
-/* ----Diseño para movil y resoluciones bajas---- */
+/* =========================================================
+   LOGIN Y PANEL DE ADMINISTRACIÓN
+   ========================================================= */
+.login-container {
+    width: 350px;
+    margin: 120px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #553e31;
+}
+.login-container input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #918a8c;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.login-container button {
+    width: 95%;
+    padding: 12px;
+    background: #6b4e3d;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.login-container button:hover {
+    background: #553e31;
+}
+#msg {
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+}
+
+/* PANEL */
+.panel-container {
+    width: 90%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table thead {
+    background: #f5ebe0;
+    color: #333;
+}
+table th, table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+table tr:hover {
+    background: #ffe6f1;
+}
+.delete-btn {
+    background: #ff4f4f;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.delete-btn:hover {
+    background: #d93636;
+}
+.logout-btn {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.logout-btn:hover {
+    background: #555;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -249,7 +364,6 @@ form button:hover { background-color: #553e31; }
         flex-direction: column;
         align-items: center;
     }
-
     .controles button {
         width: 80%;
         margin: 0.3rem 0;

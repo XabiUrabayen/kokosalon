@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Xabi"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Panel de administración</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../imagenes/logo.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h1>Kokó Salón</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="text-align:center; margin-top: 2rem;">Panel de administración</h2>
+
+        <div style="text-align:center;">
+            <a class="logout-btn" href="/admin/logout">Cerrar sesión</a>
+        </div>
+
+        <section class="panel-container">
+            <h2>Listado de citas</h2>
+
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Fecha</th>
+                        <th>Sexo</th>
+                        <th>Mensaje</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Kokó Salón - Tu salón de belleza</p>
+        <p>Contacto: info@kokosalon.com | Tel: 123-456-789</p>
+    </footer>
+
+    <script>
+        async function cargarCitas() {
+            const res = await fetch("/admin/list");
+
+            if (!res.ok) {
+                if (res.status === 401) {
+                    window.location.href = "login.html";
+                }
+                return;
+            }
+
+            const citas = await res.json();
+            const tbody = document.querySelector("#tabla tbody");
+            tbody.innerHTML = "";
+
+            citas.forEach(c => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${c.id}</td>
+                    <td>${c.nombre}</td>
+                    <td>${c.email}</td>
+                    <td>${c.fecha}</td>
+                    <td>${c.sexo}</td>
+                    <td>${c.mensaje}</td>
+                    <td><button class="delete-btn" onclick="borrar(${c.id})">Eliminar</button></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        async function borrar(id) {
+            await fetch("/admin/delete?id=" + id, { method: "POST" });
+            cargarCitas();
+        }
+
+        cargarCitas();
+    </script>
+
+</body>
+</html>
