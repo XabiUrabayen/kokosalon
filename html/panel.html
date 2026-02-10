@@ -53,7 +53,7 @@
 
     <script>
         async function cargarCitas() {
-            const res = await fetch("/list");
+            const res = await fetch("/admin/list");
 
             if (!res.ok) {
                 if (res.status === 401) {
@@ -71,7 +71,7 @@
                 row.innerHTML = `
                     <td>${c.id}</td>
                     <td>${c.nombre}</td>
-                    <td>${c.email1}</td>
+                    <td>${c.email}</td>
                     <td>${c.fecha}</td>
                     <td>${c.sexo}</td>
                     <td>${c.mensaje}</td>

@@ -8,10 +8,11 @@ export async function onRequest(context) {
   const db = context.env.DB;
 
   const result = await db.prepare(`
-    SELECT id, nombre, email1, fecha, sexo, mensaje
+    SELECT id, nombre, email, fecha, sexo, mensaje
     FROM citas
     ORDER BY id DESC
   `).all();
+
 
   return new Response(JSON.stringify(result.results), {
     headers: { "Content-Type": "application/json" }
