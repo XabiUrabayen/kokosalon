@@ -8,10 +8,11 @@ export async function onRequestPost(context) {
     return new Response("Credenciales incorrectas", { status: 401 });
   }
 
-  const cookie = `session=ok; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=3600`;
-
   return new Response("Acceso concedido", {
     status: 200,
-    headers: { "Set-Cookie": cookie }
+    headers: {
+      "Set-Cookie": "session=ok; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=600"
+    }
   });
 }
+
