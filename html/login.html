@@ -47,7 +47,7 @@
 
             const res = await fetch("/admin/login", {
                 method: "POST",
-                credentials: "include",   // ← IMPORTANTE (y ahora con coma)
+                credentials: "include",   // ← IMPORTANTE
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ user, pass })
             });
@@ -63,3 +63,4 @@
 
 </body>
 </html>
+
